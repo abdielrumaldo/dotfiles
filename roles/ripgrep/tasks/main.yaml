@@ -1,0 +1,7 @@
+---
+- name: Install ripgrep [dependency]
+  homebrew:
+    name: ripgrep
+    state: present
+  become: yes
+
