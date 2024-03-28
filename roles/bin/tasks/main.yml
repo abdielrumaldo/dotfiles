@@ -1,0 +1,6 @@
+- name: Copy custom bash scripts
+  ansible.builtin.copy:
+    dest: "{{ ansible_user_dir }}/.config/bin/"
+    src: "bin_files/"
+
+
