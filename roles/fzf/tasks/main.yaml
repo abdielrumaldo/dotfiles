@@ -10,6 +10,6 @@
 - name: Copy and Fzf Autocomplete and Keybinds 
   ansible.builtin.copy:
     dest: "{{ ansible_user_dir }}/.fzf.zsh"
-    src: "fzf.zsh"
+    src: ".fzf.zsh"
 
 
