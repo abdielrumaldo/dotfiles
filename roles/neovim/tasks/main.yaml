@@ -8,9 +8,14 @@
     name: "neovim"
     update_homebrew: yes
 
+- name: Delete existing nvim folder
+  file:
+    path: "{{ ansible_user_dir }}/.config/nvim"
+    state: absent
+
 - name: Clone Pigeon-nvim
   ansible.builtin.git:
     clone: yes
     dest: "{{ ansible_user_dir }}/.config/nvim"
-    repo: https://github.com/abdielrumaldo/pigeon-nvim.git  
+    repo: https://github.com/abdielrumaldo/nvim.git  
     update: yes
