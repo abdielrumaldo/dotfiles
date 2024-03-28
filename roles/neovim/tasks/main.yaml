@@ -11,9 +11,6 @@
 - name: Clone Pigeon-nvim
   ansible.builtin.git:
     clone: yes
-    depth: 1
     dest: "{{ ansible_user_dir }}/.config/nvim"
-    repo: https://github.com/abdielrumaldo/pigeon-nvim 
-    single_branch: yes
+    repo: https://github.com/abdielrumaldo/pigeon-nvim.git  
     update: yes
-
