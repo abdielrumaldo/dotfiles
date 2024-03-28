@@ -1,9 +1,8 @@
 ---
 - name: Install Fzf from Brew
   community.general.homebrew:
-  name: fzf
-  state: present
-
+    name: fzf
+    state: present
 
 - name: Run install script
   script: /opt/homebrew/opt/fzf/install --key-bindings --completion --update-rc

@@ -13,11 +13,6 @@
       tags:
         - always
 
-    - name: display roles
-      debug: "var=roles"
-      tags:
-        - always
-
     - name: Run roles
       include_role:
         apply:
