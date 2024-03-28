@@ -1,0 +1,7 @@
+---
+- name: Install node [dependency]
+  homebrew:
+    name: node
+    state: present
+  become: yes
+
