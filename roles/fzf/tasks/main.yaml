@@ -1,9 +1,8 @@
 ---
 - name: Install Fzf from Brew
-  homebrew:
-  name:
-      - fzf
-    state: present
+  community.general.homebrew:
+  name: fzf
+  state: present
 
 
 - name: Run install script
