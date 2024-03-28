@@ -1,8 +1,16 @@
 ---
 - name: Install Fzf from Brew
-  community.general.homebrew:
+  homebrew:
     name: fzf
     state: present
 
 - name: Run install script
-  script: /opt/homebrew/opt/fzf/install --key-bindings --completion --update-rc
+  script: /opt/homebrew/opt/fzf/install --no-key-bindings --no-completion --no-update-rc
+
+
+- name: Copy init.lua
+  ansible.builtin.copy:
+    dest: "{{ ansible_user_dir }}"
+    src: "fzf.zsh"
+
+

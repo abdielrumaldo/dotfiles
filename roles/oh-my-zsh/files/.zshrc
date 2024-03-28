@@ -105,7 +105,7 @@ alias zshsource="source ~/.zshrc"
 alias tmuxconfig="nvim ~/.config/tmux/tmux.conf"
 alias tmuxsource="tmux source ~/.config/tmux/tmux.conf"
 alias fetch-secret="bash ~/.config/bin/secret-fetcher"
+#
 # fzf support for **
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /opt/homebrew/opt/fzf/shell/completion.zsh
 
