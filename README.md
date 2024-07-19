@@ -1,6 +1,4 @@
-
 This repo is heavily influenced by [ALT-F4-LLC](https://github.com/ALT-F4-LLC/dotfiles)'s repo. Go check it out!
-
 
 ## Goals
 
@@ -20,7 +18,6 @@ This Ansible playbook only supports `MacOS|Ubuntu soon)` distribution. This is b
 
 Verify your `MacOS|(Ubuntu soon)` installation has all latest packages installed before running the playbook.
 
-
 > NOTE: This will take some time.
 
 ## Setup
@@ -31,16 +28,15 @@ The `all.yaml` file allows you to personalize your setup to your needs. This fil
 
 Below is a list of all available values. Not all are required but incorrect values will break the playbook if not properly set.
 
-| Name                  | Type                                | Required |
-| --------------------- | ----------------------------------- | -------- |
-| git_user_email        | string                              | yes      |
-| git_user_name         | string                              | yes      |
-| exclude_roles         | array `(see group_vars/all)`        | no       |
-| ssh_key               | dict `(see SSH Keys below)`         | no       |
-| system_host           | dict `(see System Hosts below)`     | no       |
-| bash_public           | dict `(see Environment below)`      | no       |
-| bash_private          | dict `(see Environment below)`      | no       |
-
+| Name           | Type                            | Required |
+| -------------- | ------------------------------- | -------- |
+| git_user_email | string                          | yes      |
+| git_user_name  | string                          | yes      |
+| exclude_roles  | array `(see group_vars/all)`    | no       |
+| ssh_key        | dict `(see SSH Keys below)`     | no       |
+| system_host    | dict `(see System Hosts below)` | no       |
+| bash_public    | dict `(see Environment below)`  | no       |
+| bash_private   | dict `(see Environment below)`  | no       |
 
 #### Environment
 
@@ -51,7 +47,6 @@ Manage environment variables by configuring the `bash_public` and `bash_private`
 The `bash_public` value allows you to include a dictionary of generic and unsecure key-value pairs that will be stored in a `~/.bash_public`.
 
 ```yaml
-
 ---
 bash_public:
   MY_ENV_VAR: something
@@ -62,7 +57,6 @@ bash_public:
 The `bash_private` value allows you to include a dictionary of secure key-value pairs that will be stored in a `~/.bash_private`.
 
 ```yaml
-
 ---
 bash_private:
   MY_ENV_VAR_SECRET: !vault |
@@ -79,7 +73,6 @@ bash_private:
 Manage SSH keys by setting the `ssh_key` value in `values.yaml` shown as example below:
 
 ```yaml
-
 ---
 ssh_key:
   <filename>: !vault |
@@ -98,7 +91,6 @@ ssh_key:
 Manage `/etc/hosts` by setting the `system_host` value in `values.yaml`.
 
 ```yaml
-
 ---
 system_host:
   127.0.0.1: foobar.localhost
@@ -181,6 +173,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/abdielrumaldo/dotfiles/m
 ```
 
 If you want to run only a specific role, you can specify the following bash command:
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/abdielrumaldo/dotfiles/main/bin/dotfiles | bash -s -- --tags comma,seperated,tags
 ```
@@ -192,7 +185,7 @@ This repository is continuously updated with new features and settings which bec
 To update your environment run the `dotfiles` command in your shell:
 
 ```bash
-dotfiles
+./dotfiles
 ```
 
 This will handle the following tasks:
@@ -208,6 +201,7 @@ This `dotfiles` command is available to you after the first use of this repo, as
 Any flags or arguments you pass to the `dotfiles` command are passed as-is to the `ansible-playbook` command.
 
 For Example: Running the tmux tag with verbosity
+
 ```bash
 dotfiles -t tmux -vvv
 ```

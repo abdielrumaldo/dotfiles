@@ -43,7 +43,7 @@ if  [[ -f "requirements" ]]; then
   ansible-galaxy install -r requirements.yml
 fi
 
-# Run playbook
+# Run playbook, vault-password is in your drive... dummy..
 if [[ -f "$CONFIG_DIR/vault-password.txt" ]]; then
   ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" --vault-password-file "$CONFIG_DIR/vault-password.txt" "$DOTFILES_DIR/main.yaml" --ask-become-pass "$@"
 else
