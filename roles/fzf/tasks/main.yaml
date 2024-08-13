@@ -5,9 +5,9 @@
     state: present
 
 - name: Run install script
-  script: /opt/homebrew/opt/fzf/install --no-key-bindings --no-completion --no-update-rc
+  script: /opt/homebrew/opt/fzf/install --no-update-rc
 
-- name: Copy and Fzf Autocomplete and Keybinds
+- name: Copy FZF configuration
   ansible.builtin.copy:
     dest: "{{ ansible_user_dir }}/.fzf.zsh"
     src: ".fzf.zsh"
